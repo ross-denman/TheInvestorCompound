@@ -5,27 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheInvestorCompound.Data
+namespace TheInvestorCompound.Models
 {
-    public class Post
+    public class PostListItem
     {
-        [Key]
         public int PostId { get; set; }
-        [Required]
         [Display(Name = "Posted By")]
         public Guid PostedBy { get; set; }
-        [Required]
-        [MaxLength(160, ErrorMessage = "Please use 160 characters or less")]
         [Display(Name = "Title")]
         public string PostName { get; set; }
-        public string PostCoverImage { get; set; }
-        [Required]
-        public string PostContent { get; set; }
-        [Required]
         [Display(Name = "Created (UTC)")]
         public DateTimeOffset CreatedUtc { get; set; }
-        [Display(Name = "Last Modified (UTC)")]
-        public DateTimeOffset? ModifiedUtc { get; set; }
 
     }
 }

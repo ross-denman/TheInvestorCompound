@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PostService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheInvestorCompound.Data\TheInvestorCompound.Data.csproj">
+      <Project>{5E71A19E-C83F-4A86-BDD2-243F0259F6C3}</Project>
+      <Name>TheInvestorCompound.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheInvestorCompound.Models\TheInvestorCompound.Models.csproj">
+      <Project>{86F4FD3D-4C32-4CDC-AF1D-100288EC7BC5}</Project>
+      <Name>TheInvestorCompound.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
