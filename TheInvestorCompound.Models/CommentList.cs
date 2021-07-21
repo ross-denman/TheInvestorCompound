@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 
 namespace TheInvestorCompound.Models
 {
-    public class PostListItem
+    public class CommentList
     {
-        public int PostId { get; set; }
-        [Display(Name = "Posted By")]
-        public Guid PostedBy { get; set; }
-        [Display(Name = "Title")]
-        public string PostName { get; set; }
-        // Add Later-  not sure of set up yet
-        // 
-        //public string ShortPost { get; set; }
+        public int CommentId { get; set; }
+        [Display(Name = "Comment By")]
+        public Guid CommentedBy { get; set; }
+        [Display(Name = "Comment")]
+        public string CommentContent { get; set; }
         [Display(Name = "Created (UTC)")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Last Modified (UTC)")]
