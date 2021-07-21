@@ -26,6 +26,6 @@ namespace TheInvestorCompound.Data
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Last Modified (UTC)")]
         public DateTimeOffset? ModifiedUtc { get; set; }
-
+        public ICollection<Comment> Comment { get; set; }
     }
 }

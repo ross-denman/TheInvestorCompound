@@ -49,5 +49,40 @@ namespace TheInvestorCompound.Services
             return query.ToArray();
         }
         // Get (ID)
+        public PostDetail GetPostById(int id)
+        {
+            var entity = ctx.Posts.Single(
+                e => e.PostId == id);
+            return new PostDetail
+            {
+                PostId = entity.PostId,
+                PostName = entity.PostName,
+                PostCoverImage = entity.PostCoverImage,
+                PostContent = entity.PostContent,
+                CreatedUtc = entity.CreatedUtc,
+                ModifiedUtc = entity.ModifiedUtc
+            };
+        }
+        public bool UpdatePost(PostEdit model)
+        {
+            var entity = ctx.Posts.Single(
+                e => e.PostId == model.PostId && e.PostedBy == _userId);
+
+            entity.PostName = model.PostName;
+            entity.PostCoverImage = model.PostCoverImage;
+            entity.PostContent = model.PostContent;
+            entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+            return ctx.SaveChanges() == 1;
+        }
+        public bool DeletePost(int postId)
+        {
+            var entity = ctx.Posts.Single(
+                e => e.PostId == postId && e.PostedBy == _userId);
+
+            ctx.Posts.Remove(entity);
+
+            return ctx.SaveChanges() == 1;
+        }
     }
 }
