@@ -14,6 +14,9 @@ namespace TheInvestorCompound.Models
         public Guid PostedBy { get; set; }
         [Display(Name = "Title")]
         public string PostName { get; set; }
+        // Add Later-  not sure of set up yet
+        // 
+        //public string ShortPost { get; set; }
         [Display(Name = "Created (UTC)")]
         public DateTimeOffset CreatedUtc { get; set; }
 
